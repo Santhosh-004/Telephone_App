@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<title>Telephone Registery</title>
+<body>
+    <h1>Telephone Registry</h1>
+    <div class="container-Main">
+        <button id="add">Add</button>
+        <button id="search">Search</button>
+        <button id="delete">Delete</button>
+    </div>
+
+    <div class="container-Add">
+        <div class="form">
+            <label for="name">Name</label>
+            <input type="text" id="name">
+        </div>
+        <div class="form">
+            <label for="number">Number</label>
+            <input type="text" id="number">
+        </div>
+        <div id="new">
+            <button id="addBack">Back</button>
+            <button id="submit-Add">Submit</button>
+        </div>
+
+    </div>
+
+    
+    <div class="container-Search">
+        <p>Enter Name or Number to search</p>
+        <input type="text" id="search">
+        <div>
+            <button id="searchBack">Back</button>
+            <button id="search-txt">Search</button>
+        </div>
+    </div>
+
+
+    <div class="container-Delete">
+        <p>Enter Name or Number to delete</p>
+        <input type="text" id="delete-txt">
+        <div>
+            <button id="deleteBack">Back</button>
+            <button id="delete-txt">Delete</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
