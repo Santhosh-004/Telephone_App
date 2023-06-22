@@ -38,6 +38,30 @@ p {
     margin: 0px auto;
 }
 
+.add-done {
+    display: none;
+    font-size: 30px;
+    margin-top: 15px;
+
+}
+
+.contact-Table {
+    display:flex;
+    justify-content: center;
+    margin: 30px auto;
+    width: 50%;
+}
+
+table {
+    border-collapse: collapse;
+    
+}
+
+th, td {
+    border: 1px solid black;
+    width: 500px;
+}
+
 .container-Search button {
     width: 75px;
     margin-top: 15px;
