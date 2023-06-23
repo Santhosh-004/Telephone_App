@@ -85,6 +85,11 @@ th, td {
     margin: 0px auto;
 }
 
+.delete-done {
+    display: none;
+    font-size: 30px;
+}
+
 .container-Delete button {
     width: 75px;
     margin-top: 15px;
