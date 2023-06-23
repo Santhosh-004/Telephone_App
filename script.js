@@ -107,35 +107,42 @@ addElButton.addEventListener('click', () => {
 document.querySelector('#submit-Add').addEventListener('click', () => {
     let t_name = document.querySelector('#name').value
     let t_number = document.querySelector('#number').value
-    //console.log(t_name, t_number)
-    contact.name.push(t_name)
-    contact.number.push(t_number)
 
     let save = t_name+' '+t_number
 
-    set(ref(db, 'contact/' + save), {
-        name: t_name,
-        number: t_number
-    })
-    .then(() => {
-        alert("Added Successfully")
-    })
-    .catch((error) => {
-        //console.error(error)
-    })
+    if (t_number.length == 10) {
+        set(ref(db, 'contact/' + save), {
+            name: t_name,
+            number: t_number
+        })
+        .then(() => {
+            alert("Added Successfully")
+        })
+        .catch((error) => {
+            //console.error(error)
+        })
+    
+        document.querySelector('#name').value = ''
+        document.querySelector('#number').value = ''
+        document.querySelector('.add-done').style.display = 'block'    
+    } else {
+        alert('Invalid, enter 10 digit number')
+    }
 
-    localStorage.setItem("stored", JSON.stringify(contact))
-    document.querySelector('#name').value = ''
-    document.querySelector('#number').value = ''
-    document.querySelector('.add-done').style.display = 'block'
-
+    
 })
 
 document.querySelector('#addBack').addEventListener('click', () => {
     mainEl.style.display = 'flex'
     addInput.style.display = 'none'
-    render_table(contact)
     document.querySelector('.contact-Table').style.display = 'flex'
+    get_firebase()
+    .then((contactData) => {
+        contact = contactData
+        console.log(contact)
+        render_table(contact)
+    })
+
 })
 
 searchElButton.addEventListener('click', () => {
