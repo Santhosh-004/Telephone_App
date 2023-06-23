@@ -207,10 +207,8 @@ document.querySelector('#delete-btn').addEventListener('click', () => {
     let init = contact
     console.log('here', init)
     let found = false
-    for (let i=0; i < init.name.length; i++) {
-        
+    for (let i=0; i < init.name.length; i++) {   
         if (init.name[i] === document.querySelector('#delete-txt').value || init.number[i] === document.querySelector('#delete-txt').value) {
-            console.log('came here up')
             let rem = init.name[i]+' '+init.number[i]
             remove(ref(db, 'contact/' + rem))
             .then(() => {
@@ -221,7 +219,6 @@ document.querySelector('#delete-btn').addEventListener('click', () => {
         }
     }
     if (found==false) {
-        console.log('came here')
         document.querySelector('.delete-done').innerHTML = `<p>Does not Exist, Try Again</p>`
         document.querySelector('.delete-done').style.display = 'block'
     }
